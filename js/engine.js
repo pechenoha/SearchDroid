@@ -126,9 +126,8 @@ $(document).ready(function(){
 		}
 	});
 
-    
-    
-    function topBottom(where) { // перевірка - верх-низ
+
+	function topBottom(where) { // перевірка - верх-низ
 		if (where == "top") {
 			var y = objTop;  // y = CONST
 		} else if (where == "bottom") {
@@ -167,7 +166,7 @@ $(document).ready(function(){
 		var y = objTop; // змінна величина 
 		var fl = false;
 		while ((y <= (objTop + objHeight)) && fl == false) { // поки y <= кінця відрізка
-			if (document.elementFromPoint(x,y).id == "workingArea") {
+			if (document.elementFromPoint(x,y).id && document.elementFromPoint(x,y).id == "workingArea") {
 				// переводимо в нормальні координати системи 100*60
 				x = x/10;
 				x = x.toFixed();
@@ -183,7 +182,6 @@ $(document).ready(function(){
 		}
 		return fl;
 	}
-	
 	
 	function placeDroid(e, middle) { // роміщення робота в іншій точці
 
@@ -254,18 +252,25 @@ $(document).ready(function(){
 
 		var colorId = myRandom(0, 5);
 
-		if (colorId == 5) {
-			objColor = "червоного";
-		} else if (colorId == 4) {
-			objColor = "жовтого";
-		} else if (colorId == 3) {
-			objColor = "рожевого";
-		} else if (colorId == 2) {
-			objColor = "бордового";
-		} else if (colorId == 1) {
-			objColor = "синього";
-		} else if (colorId == 0) {
-			objColor = "зеленого";
+		switch(colorId) {
+			case 0:
+				objColor = "зеленого";
+				break;
+			case 1:
+				objColor = "синього";
+				break;
+			case 2:
+				objColor = "бордового";
+				break;
+			case 3:
+				objColor = "рожевого";
+				break;
+			case 4:
+				objColor = "жовтого";
+				break;
+			case 5:
+				objColor = "червоного";
+				break;
 		}
 
 		var randAngle = myRandom(0,10);
