@@ -166,7 +166,7 @@ $(document).ready(function(){
 		var y = objTop; // змінна величина 
 		var fl = false;
 		while ((y <= (objTop + objHeight)) && fl == false) { // поки y <= кінця відрізка
-			if (document.elementFromPoint(x,y).id && document.elementFromPoint(x,y).id == "workingArea") {
+			if (typeof document.elementFromPoint(x,y) !== undefined && document.elementFromPoint(x,y).id == "workingArea") {
 				// переводимо в нормальні координати системи 100*60
 				x = x/10;
 				x = x.toFixed();
