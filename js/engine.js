@@ -227,7 +227,58 @@ $(document).ready(function(){
 			e.preventDefault();
 		}
 	}
+	
+	function obstacleGeneration(e) { // генерування об'єктів
 
+		objWidth = myRandom(40, 150);
+		objHeight = myRandom(40, 120);
+
+		objLeft = myRandom(0, 1000);
+		while (objLeft+objWidth>1000) {
+			objLeft = myRandom(0, 900);
+		}
+
+		objTop = myRandom(0, 500);
+		while (objTop+objHeight>600) {
+			objTop = myRandom(0, 500);
+		}
+
+		var colors = [
+				"008000",
+				"0000CD",
+				"800000",
+				"FF00FF",
+				"B8860B",
+				"DC143C"
+		];
+
+		var colorId = myRandom(0, 5);
+
+		if (colorId == 5) {
+			objColor = "червоного";
+		} else if (colorId == 4) {
+			objColor = "жовтого";
+		} else if (colorId == 3) {
+			objColor = "рожевого";
+		} else if (colorId == 2) {
+			objColor = "бордового";
+		} else if (colorId == 1) {
+			objColor = "синього";
+		} else if (colorId == 0) {
+			objColor = "зеленого";
+		}
+
+		var randAngle = myRandom(0,10);
+		$('#obj').css({
+			'width'       : objWidth + 'px',
+			'height'      : objHeight + 'px',
+			'left'        : objLeft + 'px',
+			'top'         : objTop + 'px', 
+			'background'  : '#' + colors[colorId] 
+		}).rotate(randAngle);
+		$('#obj').show();
+		e.preventDefault();
+	}
 
 	function myRandom (from, to) {
 		return Math.floor((Math.random() * (to - from + 1)) + from);
