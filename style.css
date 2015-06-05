@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+    font-size: 14px;
+    overflow: hidden;
+}
+#working_area {
+    background: url("img/grid.png") repeat;
+    display: block;
+    float: left;
+    width: 1000px;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#searchDroid {
+    position: absolute;
+    width: 59px;
+    height: 59px;
+}
+#right_block {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    border:1px solid #ccc;
+    width: 230px;
+    height: auto;
+    background: #fff;
+}
+h3 {
+    margin: 0 0 6px 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+    color: #369c12;
+}
+.h {
+    font-weight: bold;
+}
+.disabl {
+    background: #e8e5e5;
+}
+#right_block #form {
+    width: 220px;
+    margin: 0 auto;
+    background: #dfdddd;
+    padding: 15px 0 10px 10px;
+}
+#right_block #results {
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    background: #dfdddd;
+    padding: 15px 0 10px 30px;
+}
+#axis {
+    display: block;
+    float: left;
+    width: 1008px;
+    height: 15px;
+    background: url("img/axis.png") no-repeat;
+    margin: 5px 0 0 2px;
+}
+#laser {
+    display: none;
+    position: relative;
+    padding: 0 0 0 200px;
+}
+#obj {
+    display: none;
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    background: #800000;
+}
