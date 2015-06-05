@@ -5,7 +5,7 @@ body {
     font-size: 14px;
     overflow: hidden;
 }
-#main_frame {
+#working_area {
     background: url("img/grid.png") repeat;
     display: block;
     float: left;
@@ -65,7 +65,7 @@ h3 {
     background: url("img/axis.png") no-repeat;
     margin: 5px 0 0 2px;
 }
-#workingArea {
+#laser {
     display: none;
     position: relative;
     padding: 0 0 0 200px;

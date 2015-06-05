@@ -4,8 +4,8 @@
  */
 
 $(document).ready(function(){
-	var shur = 2;
-	var dovj = 150;
+	var laserWidth = 2;
+	var laserLength = 150;
 
 	var objColor;
 	var objWidth;
@@ -50,12 +50,12 @@ $(document).ready(function(){
 
 		$('#results').html(' <center><b>Блок для виведення результатів</b></center> <br />');
 
-		$('#workingArea').css({
-				'width' : (dovj*10),
-				'height' : (shur*10),
-				'paddingLeft' : (dovj*10),
-				'left' : (x*10-dovj*10), 
-				'top' : (600-y*10-shur*5)
+		$('#laser').css({
+				'width' : (laserLength*10),
+				'height' : (laserWidth*10),
+				'paddingLeft' : (laserLength*10),
+				'left' : (x*10-laserLength*10), 
+				'top' : (600-y*10-laserWidth*5)
 			}).show().rotate(0);
 
 		setTimeout(searchAnalyser,700);
@@ -96,7 +96,7 @@ $(document).ready(function(){
 			var programCycle = setInterval(function() {
 				angle = angle + angleStep;
 				if (angle > finalAngle) {angle = finalAngle;}
-				jQuery("#workingArea").rotate(angle);
+				jQuery("#laser").rotate(angle);
 				jQuery("#searchDroid").rotate(angle);
 
 				if (angle >= startAngle) {
@@ -136,7 +136,7 @@ $(document).ready(function(){
 		var x = objLeft; // змінна величина 
 		var fl = false;
 		while ((x <= (objLeft + objWidth)) && fl == false) { // поки х <= кінця відрізка
-			if (document.elementFromPoint(x,y).id == "workingArea") {
+			if (document.elementFromPoint(x,y).id == "laser") {
 
 				// переводимо в нормальні координати системи 100*60
 				x = x/10;
@@ -166,7 +166,7 @@ $(document).ready(function(){
 		var y = objTop; // змінна величина 
 		var fl = false;
 		while ((y <= (objTop + objHeight)) && fl == false) { // поки y <= кінця відрізка
-			if (typeof document.elementFromPoint(x,y) !== undefined && document.elementFromPoint(x,y).id == "workingArea") {
+			if (typeof document.elementFromPoint(x,y) !== undefined && document.elementFromPoint(x,y).id == "laser") {
 				// переводимо в нормальні координати системи 100*60
 				x = x/10;
 				x = x.toFixed();
@@ -185,7 +185,7 @@ $(document).ready(function(){
 	
 	function placeDroid(e, middle) { // роміщення робота в іншій точці
 
-		$('#workingArea').hide();
+		$('#laser').hide();
 		$('#searchDroid').rotate(0);
 
 		if (middle) {
@@ -217,8 +217,8 @@ $(document).ready(function(){
 		}
 
 		$('#searchDroid').css({
-				'left' : (x*10-shur*5),
-				'top' : (600-y*10-shur*5)
+				'left' : (x*10-laserWidth*5),
+				'top' : (600-y*10-laserWidth*5)
 		});
 
 		if (e) {
